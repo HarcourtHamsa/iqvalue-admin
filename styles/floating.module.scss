@@ -1,0 +1,24 @@
+.btn {
+    width: fit-content;
+    height: fit-content;
+    // background-color: red;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .btn {
+        right: 0;
+    }
+}
