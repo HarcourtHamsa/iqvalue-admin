@@ -41,7 +41,6 @@ function Index() {
         </Container>
       </DashboardWrapper>
 
-      {/* <TradingView.Ticker widgetProps={{ theme: "dark" }} /> */}
 
       <FloatingButton />
     </div>
