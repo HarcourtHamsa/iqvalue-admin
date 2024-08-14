@@ -83,7 +83,12 @@ function Users() {
           </Text>
         ) : (
           <TableContainer>
-            <Table variant="striped" color="black" rounded={6}>
+            <Table
+              variant="simple"
+              // colorScheme="teal"
+              color="white"
+              rounded={6}
+            >
               <Thead bg="whiteAlpha.50" color="white">
                 <Tr>
                   <Th
@@ -177,7 +182,7 @@ function Users() {
                                   ...user,
                                 },
                               },
-                              "app/user/"
+                              "app/user/",
                             );
                           }}
                           size="sm"
@@ -199,7 +204,7 @@ function Users() {
                                   ...user,
                                 },
                               },
-                              "app/history"
+                              "app/history",
                             );
                           }}
                           size="sm"

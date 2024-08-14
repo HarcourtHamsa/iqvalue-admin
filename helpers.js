@@ -5,7 +5,7 @@ const environment = {
   dev: "http://localhost:8080",
 };
 
-axios.defaults.baseURL = environment.prod;
+axios.defaults.baseURL = environment.dev;
 //
 const helpers = {};
 

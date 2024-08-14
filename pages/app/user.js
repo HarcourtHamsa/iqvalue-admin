@@ -22,7 +22,6 @@ import helpers from "../../helpers";
 
 function User() {
   const { query } = useRouter();
-  console.log(query);
 
   const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
@@ -47,13 +46,15 @@ function User() {
       referalBonus: query.referalBonus,
       verified: query.verified,
       isDisabled: query.isDisabled,
+      currency: query.currency ?? "",
     },
 
     onSubmit: async (values) => {
       setIsLoading(true);
 
       try {
-        console.log(values);
+        console.log({ values });
+
         const res = await helpers
           .updateUser(values, query.email)
           .then((data) => {
@@ -61,7 +62,7 @@ function User() {
               notify("Oops something went wrong", "error");
             } else {
               notify("Success: Changes updated!", "success");
-              router.push("/app/users");
+              // router.push("/app/users");
             }
           });
       } catch (error) {
@@ -178,6 +179,7 @@ function User() {
                       </FormControl>
                     </Box>
                   </HStack>
+
                   <HStack>
                     <Box>
                       <FormControl id="firstName" isRequired>
@@ -215,6 +217,19 @@ function User() {
                     >
                       <option value="yes">Yes</option>
                       <option value="no">No</option>
+                    </Select>
+                  </FormControl>
+                  <FormControl pt={"4"}>
+                    <FormLabel fontWeight="normal">Default Currency</FormLabel>
+                    <Select
+                      placeholder="Select option"
+                      id="currency"
+                      name="currency"
+                      onChange={formik.handleChange}
+                      value={formik.values.currency}
+                    >
+                      <option value="usd">USD</option>
+                      <option value="gbp">GBP</option>
                     </Select>
                   </FormControl>
                   <Stack spacing={10}>
