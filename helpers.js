@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const environment = {
-   prod: "https://iqvalue-investments-6efaf38cc2b7.herokuapp.com/",
+   prod: "https://iq-value-backup-76f9f186fe7a.herokuapp.com/",
   dev: "http://localhost:8080",
 };
 
